@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Saved - BiteMetrics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='saved.css') }}">
+</head>
+
+<body class="saved-page">
+
+    <div class="saved-wrapper">
+
+        <!-- BACK TO DASHBOARD -->
+        <a href="{{ url_for('home') }}"
+           class="back-dashboard">
+            ← Back to Dashboard
+        </a>
+
+
+        <!-- SAVED CARD -->
+        <div class="saved-card">
+
+            <div class="saved-header">
+
+                <div class="saved-icon">
+                    💾
+                </div>
+
+                <div>
+                    <h1>Saved Insights</h1>
+
+                    <p>
+                        Keep your important analytics in one place.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="saved-divider"></div>
+
+
+            <!-- EMPTY STATE -->
+            <div class="saved-empty">
+
+                <div class="empty-icon">
+                    🔖
+                </div>
+
+                <h2>
+                    Your saved insights will appear here
+                </h2>
+
+                <p>
+                    You haven't saved any analytics yet.
+                    Explore the BiteMetrics dashboard to view
+                    restaurant, customer and city insights.
+                </p>
+
+                <a href="{{ url_for('home') }}"
+                   class="explore-btn">
+                    📊 Explore Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

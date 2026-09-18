@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About BiteMetrics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='about.css') }}">
+</head>
+
+<body class="about-page">
+
+    <div class="about-wrapper">
+
+        <!-- BACK TO DASHBOARD -->
+        <a href="{{ url_for('home') }}"
+           class="back-dashboard">
+            ← Back to Dashboard
+        </a>
+
+
+        <!-- ABOUT CARD -->
+        <div class="about-card">
+
+            <!-- HEADER -->
+            <div class="about-header">
+
+                <div class="about-icon">
+                    📊
+                </div>
+
+                <div>
+                    <h1>About BiteMetrics</h1>
+
+                    <p>
+                        Food Delivery Analytics Dashboard
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="about-divider"></div>
+
+
+            <!-- ABOUT INTRO -->
+            <div class="about-section">
+
+                <h2>🍴 About BiteMetrics</h2>
+
+                <p>
+                    BiteMetrics is a food delivery analytics dashboard
+                    designed to analyze order data and understand business
+                    performance through simple and meaningful insights.
+                </p>
+
+                <p>
+                    The project uses SQL to analyze orders, customers,
+                    restaurants, revenue, delivery status and city-wise
+                    performance. The results are presented through an
+                    easy-to-understand dashboard with tables, statistics
+                    and charts.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT PURPOSE -->
+            <div class="about-section">
+
+                <h2>🎯 Project Purpose</h2>
+
+                <p>
+                    The main purpose of BiteMetrics is to turn raw food
+                    delivery data into useful business insights. It helps
+                    identify order trends, restaurant performance, customer
+                    spending and overall delivery activity.
+                </p>
+
+            </div>
+
+
+            <!-- FEATURES -->
+            <div class="about-section">
+
+                <h2>📈 What Can You Analyze?</h2>
+
+                <div class="about-features">
+
+                    <!-- ORDERS -->
+                    <div class="about-feature">
+
+                        <span>🛵</span>
+
+                        <div>
+                            <h3>Order Analysis</h3>
+
+                            <p>
+                                Analyze total orders, order status and
+                                delivery performance.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESTAURANTS -->
+                    <div class="about-feature">
+
+                        <span>🏪</span>
+
+                        <div>
+                            <h3>Restaurant Performance</h3>
+
+                            <p>
+                                Compare restaurants based on orders
+                                and generated revenue.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CUSTOMERS -->
+                    <div class="about-feature">
+
+                        <span>👥</span>
+
+                        <div>
+                            <h3>Customer Insights</h3>
+
+                            <p>
+                                Understand customer spending patterns
+                                and identify valuable customers.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CITIES -->
+                    <div class="about-feature">
+
+                        <span>🏙️</span>
+
+                        <div>
+                            <h3>City Analysis</h3>
+
+                            <p>
+                                View order activity and performance
+                                across different cities.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SQL ANALYTICS -->
+            <div class="about-section">
+
+                <h2>🗄️ SQL Analytics</h2>
+
+                <p>
+                    BiteMetrics uses SQL queries to calculate key metrics
+                    and generate analytical insights. The project
+                    demonstrates practical use of SELECT, WHERE, GROUP BY,
+                    ORDER BY, COUNT, SUM, AVG, JOIN, HAVING and CASE
+                    statements.
+                </p>
+
+            </div>
+
+
+            <!-- BUILT WITH -->
+            <div class="about-section">
+
+                <h2>🛠️ Built With</h2>
+
+                <div class="tech-tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>MySQL</span>
+                    <span>SQL</span>
+                    <span>Chart.js</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOW IT WORKS -->
+            <div class="about-section">
+
+                <h2>⚙️ How It Works</h2>
+
+                <p>
+                    Food delivery data is stored in a MySQL database.
+                    Flask connects the application with the database
+                    and executes SQL queries. The processed results are
+                    then displayed on the BiteMetrics dashboard using
+                    tables, statistics and visual charts.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT HIGHLIGHTS -->
+            <div class="about-section">
+
+                <h2>✨ Project Highlights</h2>
+
+                <div class="about-features">
+
+                    <div class="about-feature">
+
+                        <span>📊</span>
+
+                        <div>
+                            <h3>Interactive Dashboard</h3>
+
+                            <p>
+                                View important food delivery metrics
+                                in a clean dashboard interface.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-feature">
+
+                        <span>🔍</span>
+
+                        <div>
+                            <h3>Data Filtering</h3>
+
+                            <p>
+                                Search and filter analytics by city
+                                and order status.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-feature">
+
+                        <span>📈</span>
+
+                        <div>
+                            <h3>Visual Analytics</h3>
+
+                            <p>
+                                Understand data through charts,
+                                tables and key performance metrics.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-feature">
+
+                        <span>💡</span>
+
+                        <div>
+                            <h3>Business Insights</h3>
+
+                            <p>
+                                Convert raw order data into useful
+                                and understandable insights.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="about-footer">
+
+                <strong>BiteMetrics</strong>
+
+                <span>
+                    Food Delivery Analytics • SQL Powered
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

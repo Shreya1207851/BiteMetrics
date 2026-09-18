@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About BiteMetrics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='about.css') }}">
+</head>
+
+<body class="about-page">
+
+    <div class="about-wrapper">
+
+        <!-- BACK TO DASHBOARD -->
+        <a href="{{ url_for('home') }}"
+           class="back-dashboard">
+            ← Back to Dashboard
+        </a>
+
+
+        <!-- ABOUT CARD -->
+        <div class="about-card">
+
+            <div class="about-header">
+
+                <div class="about-icon">
+                    📊
+                </div>
+
+                <div>
+                    <h1>About BiteMetrics</h1>
+
+                    <p>
+                        Food Delivery Analytics Dashboard
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="about-divider"></div>
+
+
+            <!-- INTRO -->
+            <div class="about-section">
+
+                <h2>🍴 What is BiteMetrics?</h2>
+
+                <p>
+                    BiteMetrics is a simple food delivery analytics
+                    dashboard designed to analyze orders, customers,
+                    restaurants and revenue using SQL-powered insights.
+                </p>
+
+            </div>
+
+
+            <!-- FEATURES -->
+            <div class="about-section">
+
+                <h2>📈 What can you analyze?</h2>
+
+                <div class="about-features">
+
+                    <div class="about-feature">
+                        <span>🛵</span>
+                        <div>
+                            <h3>Orders</h3>
+                            <p>Track order volume and delivery status.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <span>🏪</span>
+                        <div>
+                            <h3>Restaurants</h3>
+                            <p>Compare restaurant performance and revenue.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <span>👥</span>
+                        <div>
+                            <h3>Customers</h3>
+                            <p>Understand customer spending patterns.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <span>🏙️</span>
+                        <div>
+                            <h3>Cities</h3>
+                            <p>Analyze order activity across cities.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TECHNOLOGY -->
+            <div class="about-section">
+
+                <h2>🛠️ Built With</h2>
+
+                <div class="tech-tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Python Flask</span>
+                    <span>MySQL</span>
+                    <span>SQL</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="about-footer">
+
+                <strong>BiteMetrics</strong>
+
+                <span>
+                    Simple • Clean • SQL Powered
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

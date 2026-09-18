@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Feedback - BiteMetrics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='feedback.css') }}">
+</head>
+
+<body class="feedback-page">
+
+    <div class="feedback-wrapper">
+
+        <!-- BACK TO DASHBOARD -->
+        <a href="{{ url_for('home') }}" class="back-dashboard">
+            ← Back to Dashboard
+        </a>
+
+        <!-- FEEDBACK CARD -->
+        <div class="feedback-card">
+
+            <div class="feedback-header">
+
+                <div class="feedback-icon">
+                    💬
+                </div>
+
+                <div>
+                    <h1>Your Feedback</h1>
+
+                    <p>
+                        Help us improve your BiteMetrics experience.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="feedback-divider"></div>
+
+            <form method="POST">
+
+                <div class="feedback-group">
+                    <label for="name">Your Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <div class="feedback-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <div class="feedback-group">
+                    <label for="feedback">Your Feedback</label>
+
+                    <textarea
+                        id="feedback"
+                        name="feedback"
+                        rows="6"
+                        placeholder="Tell us what you think about BiteMetrics..."
+                        required></textarea>
+                </div>
+
+                <div class="feedback-actions">
+
+                    <a href="{{ url_for('home') }}"
+                       class="feedback-cancel">
+                        Cancel
+                    </a>
+
+                    <button type="submit"
+                            class="feedback-submit">
+                        Send Feedback
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

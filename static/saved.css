@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Saved - BiteMetrics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='saved.css') }}">
+
+</head>
+
+
+<body class="saved-page">
+
+    <div class="saved-wrapper">
+
+
+        <!-- BACK BUTTON -->
+
+        <a href="{{ url_for('home') }}"
+           class="back-dashboard">
+
+            ← Back to Dashboard
+
+        </a>
+
+
+        <!-- MAIN CARD -->
+
+        <div class="saved-card">
+
+
+            <!-- HEADER -->
+
+            <div class="saved-header">
+
+                <div class="saved-icon">
+                    💾
+                </div>
+
+                <div>
+
+                    <h1>Saved</h1>
+
+                    <p>
+                        Your saved analytics and insights
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="saved-divider"></div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div class="saved-empty">
+
+                <div class="empty-icon">
+                    ⭐
+                </div>
+
+                <h2>
+                    Nothing saved yet
+                </h2>
+
+                <p>
+                    Save important analytics, reports and
+                    insights here for quick access later.
+                </p>
+
+                <a href="{{ url_for('home') }}"
+                   class="explore-btn">
+
+                    Explore Dashboard
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+/* =========================================
+   BITEMETRICS - SAVED PAGE
+========================================= */
+
+:root {
+    --saved-bg: #f5f6f8;
+    --saved-card: #ffffff;
+    --saved-text: #1f2937;
+    --saved-muted: #6b7280;
+    --saved-border: #e5e7eb;
+
+    --saved-primary: #ff4d5a;
+    --saved-primary-2: #ff7043;
+}
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--saved-text);
+}
+
+
+/* PAGE */
+
+.saved-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 45px 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 77, 90, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(255, 112, 67, 0.10),
+            transparent 30%
+        ),
+        var(--saved-bg);
+}
+
+
+/* WRAPPER */
+
+.saved-wrapper {
+    width: 100%;
+    max-width: 650px;
+}
+
+
+/* BACK */
+
+.back-dashboard {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+    padding: 9px 14px;
+
+    border: 1px solid var(--saved-border);
+    border-radius: 10px;
+
+    background: var(--saved-card);
+
+    color: var(--saved-text);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+.back-dashboard:hover {
+    transform: translateX(-3px);
+
+    border-color: var(--saved-primary);
+}
+
+
+/* CARD */
+
+.saved-card {
+    width: 100%;
+
+    padding: 36px;
+
+    background: var(--saved-card);
+
+    border: 1px solid var(--saved-border);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.08);
+}
+
+
+/* HEADER */
+
+.saved-header {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* ICON */
+
+.saved-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 19px;
+
+    font-size: 31px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--saved-primary),
+            var(--saved-primary-2)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(255, 77, 90, 0.20);
+}
+
+
+/* HEADER TEXT */
+
+.saved-header h1 {
+    margin-bottom: 5px;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+
+.saved-header p {
+    color: var(--saved-muted);
+
+    font-size: 13px;
+}
+
+
+/* DIVIDER */
+
+.saved-divider {
+    height: 1px;
+
+    margin: 28px 0;
+
+    background: var(--saved-border);
+}
+
+
+/* EMPTY STATE */
+
+.saved-empty {
+    padding: 35px 20px 30px;
+
+    text-align: center;
+}
+
+
+/* EMPTY ICON */
+
+.empty-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: #fff4e8;
+
+    font-size: 29px;
+}
+
+
+/* TITLE */
+
+.saved-empty h2 {
+    margin-bottom: 9px;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+/* DESCRIPTION */
+
+.saved-empty p {
+    max-width: 400px;
+
+    margin: 0 auto 23px;
+
+    color: var(--saved-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* EXPLORE BUTTON */
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 155px;
+    height: 44px;
+
+    padding: 0 18px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--saved-primary),
+            var(--saved-primary-2)
+        );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(255, 77, 90, 0.18);
+
+    transition: 0.2s ease;
+}
+
+
+.explore-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(255, 77, 90, 0.25);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .saved-page {
+        padding: 30px 15px;
+    }
+
+    .saved-card {
+        padding: 27px 20px;
+
+        border-radius: 20px;
+    }
+
+    .saved-header {
+        gap: 14px;
+    }
+
+    .saved-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 26px;
+
+        border-radius: 16px;
+    }
+
+    .saved-header h1 {
+        font-size: 23px;
+    }
+
+    .saved-empty {
+        padding: 25px 10px;
+    }
+}
+
+
+/* DARK MODE */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --saved-bg: #111214;
+        --saved-card: #1a1c1f;
+        --saved-text: #f3f4f6;
+        --saved-muted: #9ca3af;
+        --saved-border: #2b2e33;
+    }
+
+    .empty-icon {
+        background: #29231d;
+    }
+
+    .back-dashboard:hover {
+        background: #202328;
+    }
+}

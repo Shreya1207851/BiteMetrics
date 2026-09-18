@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | FoodAnalytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='login.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="login-screen">
+
+        <div class="login-container">
+
+            <div class="login-card">
+
+                <!-- LOGO -->
+
+                <div class="login-logo">
+                    🍽️
+                </div>
+
+
+                <!-- TITLE -->
+
+                <h1>
+                    Food<span>Analytics</span>
+                </h1>
+
+
+                <!-- SUBTITLE -->
+
+                <p class="login-subtitle">
+                    Create your account to access the dashboard.
+                </p>
+
+
+                <!-- LOGIN / SIGN UP BUTTONS -->
+
+                <div class="auth-buttons">
+
+                    <a href="{{ url_for('login') }}"
+                       class="auth-btn">
+                        Login
+                    </a>
+
+                    <a href="{{ url_for('register') }}"
+                       class="auth-btn active">
+                        Sign Up
+                    </a>
+
+                </div>
+
+
+                <!-- ERROR MESSAGE -->
+
+                {% if error %}
+
+                <div class="login-error">
+                    ⚠️ {{ error }}
+                </div>
+
+                {% endif %}
+
+
+                <!-- REGISTER FORM -->
+
+                <form method="POST"
+                      action="{{ url_for('register') }}">
+
+
+                    <!-- USERNAME -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Enter username"
+                            required>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter email"
+                            required>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Create password"
+                            required>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            name="confirm_password"
+                            placeholder="Confirm password"
+                            required>
+
+                    </div>
+
+
+                    <!-- REGISTER BUTTON -->
+
+                    <button type="submit"
+                            class="login-btn">
+
+                        Create Account →
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- FOOTER -->
+
+                <div class="login-footer">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <div class="signup-text">
+
+                        <a href="{{ url_for('login') }}">
+                            ← Back to Login
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

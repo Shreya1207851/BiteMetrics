@@ -1,0 +1,453 @@
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body.login-page {
+    min-height: 100vh !important;
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at top left, rgba(226, 55, 68, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 107, 74, 0.12), transparent 35%),
+        var(--bg);
+}
+
+
+/* LOGIN CONTAINER */
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* LOGIN CARD */
+
+.login-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    padding: 42px 40px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: loginAppear 0.7s ease;
+}
+
+
+@keyframes loginAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* LOGO ICON */
+
+.login-logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    font-size: 36px;
+
+    box-shadow: 0 10px 25px rgba(226, 55, 68, 0.15);
+}
+
+
+/* TITLE */
+
+.login-card h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 9px;
+}
+
+.login-card h1 span {
+    color: var(--text);
+}
+
+
+/* SUBTITLE */
+
+.login-subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* INPUT GROUP */
+
+.input-group {
+    text-align: left;
+    margin-bottom: 19px;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+
+/* INPUT */
+
+.input-group input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+
+.input-group input::placeholder {
+    color: var(--muted);
+}
+
+
+.input-group input:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 4px rgba(226, 55, 68, 0.10);
+
+    background: var(--card);
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 7px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        #ff6b4a
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 22px rgba(226, 55, 68, 0.25);
+
+    transition: 0.25s ease;
+}
+
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 28px rgba(226, 55, 68, 0.32);
+}
+
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ERROR MESSAGE */
+
+.login-error {
+    background: var(--accent-light);
+    color: var(--accent);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 11px 13px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    text-align: left;
+}
+
+
+/* FOOTER */
+
+.login-footer {
+    margin-top: 28px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.login-footer small {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 18px;
+    }
+
+    .login-card {
+        padding: 34px 25px;
+        border-radius: 22px;
+    }
+
+    .login-card h1 {
+        font-size: 27px;
+    }
+
+    .login-logo {
+        width: 68px;
+        height: 68px;
+        font-size: 32px;
+    }
+
+}
+.login-screen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+.login-container {
+    width: 420px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.login-card {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+.login-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.22),
+        0 10px 30px rgba(226, 55, 68, 0.12) !important;
+}
+.login-card {
+    border: 1px solid #cfcfcf !important;
+
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 10px 25px rgba(0, 0, 0, 0.18),
+        0 20px 50px rgba(0, 0, 0, 0.20) !important;
+}
+<div class="login-footer">
+
+    <span>
+        Food Delivery Analytics
+    </span>
+
+    <small>
+        SQL • MySQL • Flask
+    </small>
+
+    <div class="signup-text">
+        Don't have an account?
+        <a href="{{ url_for('register') }}">
+            Sign Up
+        </a>
+    </div>
+
+</div>
+/* =========================
+   AUTH BUTTONS
+========================= */
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.auth-btn {
+    min-width: 105px;
+
+    padding: 9px 20px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #e23744;
+
+    background: white;
+
+    border: 1px solid #e23744;
+
+    transition: all 0.25s ease;
+}
+
+.auth-btn:hover {
+    background: #fff1f2;
+    transform: translateY(-2px);
+}
+
+.auth-btn.active {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #e23744,
+        #ff6b4a
+    );
+
+    box-shadow: 0 6px 15px rgba(226, 55, 68, 0.18);
+}
+/* =========================
+   FINAL AUTH BUTTONS
+========================= */
+
+.auth-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
+}
+
+.auth-btn {
+    min-width: 105px !important;
+
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px !important;
+
+    border-radius: 10px !important;
+
+    text-decoration: none !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    color: #e23744 !important;
+
+    background: white !important;
+
+    border: 1px solid #e23744 !important;
+
+    transition: all 0.25s ease !important;
+}
+
+.auth-btn:hover {
+    background: #fff1f2 !important;
+    transform: translateY(-2px);
+}
+
+.auth-btn.active {
+    color: white !important;
+
+    background: linear-gradient(
+        135deg,
+        #e23744,
+        #ff6b4a
+    ) !important;
+
+    box-shadow: 0 6px 15px rgba(226, 55, 68, 0.18);
+}

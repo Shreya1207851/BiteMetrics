@@ -1,0 +1,2482 @@
+/* =========================================================
+   BITEMETRICS - COMPLETE STYLE.CSS
+========================================================= */
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+:root {
+    --bg: #f7f7f8;
+    --card: #ffffff;
+    --text: #222222;
+    --muted: #777777;
+    --border: #eeeeee;
+    --accent: #e23744;
+    --accent-dark: #c92532;
+    --accent-light: #fff1f2;
+    --green: #16a34a;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   DARK MODE VARIABLES
+========================= */
+
+body.dark,
+html.dark-loading body {
+    --bg: #111111;
+    --card: #1c1c1c;
+    --text: #f5f5f5;
+    --muted: #aaaaaa;
+    --border: #303030;
+    --accent: #ff5361;
+    --accent-dark: #ff3d4d;
+    --accent-light: #351b1e;
+    --green: #4ade80;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 850;
+    letter-spacing: -1px;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.theme-btn,
+.refresh-btn,
+.profile-btn {
+    min-height: 40px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 10px 15px;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.theme-btn:hover,
+.refresh-btn:hover,
+.profile-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(226, 55, 68, 0.10);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 92%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 28px 0 55px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 28px;
+    padding: 30px 38px;
+    min-height: 230px;
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 255, 255, 0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ff4b5c,
+            #ff6745
+        );
+    border-radius: 22px;
+    box-shadow: 0 14px 35px rgba(255, 75, 70, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+
+/* HERO CIRCLES */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -80px;
+    top: -120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: 180px;
+    bottom: -110px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* HERO TOP */
+
+.hero-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+
+/* GREETING */
+
+.hero-greeting {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    padding: 7px 12px;
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+}
+
+
+/* DATE TIME */
+
+.datetime {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+}
+
+
+/* HERO HEADING */
+
+.hero h1 {
+    margin: 8px 0 14px;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -2.5px;
+    color: #ffffff;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 span {
+    display: none;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-text > p {
+    max-width: 560px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* HERO SUBTITLE */
+
+.hero-subtitle {
+    margin: 7px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* HERO TAGS */
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hero-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+
+.hero-tags span:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+
+/* HERO ICON */
+
+.hero-icon {
+    position: absolute;
+    z-index: 2;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hero-icon::before {
+    content: "📊";
+    font-size: 40px;
+}
+
+
+/* =========================
+   KPI CARDS
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 21px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(226, 55, 68, 0.25);
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.stat-card:hover::after {
+    opacity: 1;
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-light);
+    border-radius: 11px;
+    font-size: 20px;
+    margin-bottom: 13px;
+}
+
+.stat-card h3 {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.stat-card .value {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.stat-card .small-text {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    margin-top: 27px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 17px;
+}
+
+.section-title h2 {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: var(--text);
+}
+
+.section-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   COMMON CARD
+========================= */
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================
+   COLUMNS
+========================= */
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================================================
+   RESTAURANT REVENUE + CITY-WISE ORDERS
+   SAME SIZE
+========================================================= */
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 26px;
+}
+
+.charts-grid .chart-section {
+    width: 100%;
+    height: 460px;
+    min-height: 460px;
+    margin: 0;
+    padding: 21px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.charts-grid .chart-container {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    min-height: 360px;
+    margin-top: 5px;
+    flex: 1;
+}
+
+.charts-grid .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+}
+
+
+/* CITY-WISE DONUT */
+
+.charts-grid .chart-section:nth-child(2) .chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.charts-grid .chart-section:nth-child(2) canvas {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+
+/* =========================
+   CHART SECTION
+========================= */
+
+.chart-section {
+    margin-top: 0;
+    padding: 21px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.chart-section:hover {
+    transform: translateY(-3px);
+    border-color: rgba(226, 55, 68, 0.20);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    margin-top: 5px;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   MONTHLY REVENUE + KEY INSIGHTS
+========================================================= */
+
+.bottom-dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 26px;
+    align-items: start;
+}
+
+
+/* =========================
+   MONTHLY REVENUE
+========================= */
+
+.bottom-dashboard-grid .monthly-revenue-section {
+    width: 100%;
+    height: 460px;
+    min-height: 460px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.bottom-dashboard-grid .monthly-chart-container {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    min-height: 360px;
+    margin-top: 5px;
+    flex: 1;
+}
+
+.bottom-dashboard-grid .monthly-chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* =========================================================
+   KEY INSIGHTS
+   EXACTLY 2 x 2
+========================================================= */
+
+.bottom-dashboard-grid .insights-section {
+    width: 100%;
+    height: 460px;
+    min-height: 460px;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+
+/* MAIN INSIGHTS GRID */
+
+.bottom-dashboard-grid .insights-grid,
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+    margin-top: 0;
+}
+
+
+/* EACH INSIGHT CARD */
+
+.insights-grid .insight-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+
+/* INSIGHT TITLE */
+
+.insights-grid .insight-card > h3,
+.insights-grid .insight-card .insight-title {
+    margin: 0;
+}
+
+
+/* INSIGHT CONTENT */
+
+.insights-grid .insight-card .popular,
+.insights-grid .insight-card .success-rate,
+.insights-grid .insight-card .insight-content {
+    width: 100%;
+}
+
+
+/* =========================
+   POPULAR RESTAURANT
+========================= */
+
+.insights-grid .popular {
+    min-height: 150px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.insights-grid .popular:hover {
+    transform: translateY(-3px);
+    border-color: rgba(226, 55, 68, 0.25);
+}
+
+
+/* =========================
+   DELIVERY SUCCESS
+========================= */
+
+.insights-grid .success-rate {
+    min-height: 150px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.insights-grid .success-rate:hover {
+    transform: translateY(-3px);
+    border-color: rgba(226, 55, 68, 0.25);
+}
+
+
+/* =========================
+   INSIGHT ICON
+========================= */
+
+.insights-grid .insight-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: var(--accent-light);
+    font-size: 25px;
+}
+
+
+/* =========================
+   INSIGHT CONTENT
+========================= */
+
+.insights-grid .insight-content {
+    min-width: 0;
+}
+
+.insights-grid .insight-content h3 {
+    margin: 0 0 7px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.insights-grid .insight-name {
+    margin: 0 0 4px;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.insights-grid .insight-value {
+    margin: 0;
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   RESTAURANT ICON
+========================= */
+
+.insights-grid .restaurant-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: var(--accent-light);
+    font-size: 28px;
+}
+
+
+/* =========================
+   SUCCESS CIRCLE
+========================= */
+
+.insights-grid .success-circle {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+}
+
+.insights-grid .success-info {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-wrapper th {
+    padding: 14px 17px;
+    text-align: left;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table-wrapper td {
+    padding: 15px 17px;
+    color: var(--text);
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table-wrapper tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table-wrapper tbody tr:hover {
+    background: var(--accent-light);
+}
+
+.table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.section .table-wrapper {
+    margin-top: 4px;
+}
+
+.section + .section {
+    margin-top: 30px;
+}
+
+
+/* NUMBER BADGE */
+
+.number-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 28px;
+    padding: 0 9px;
+    border-radius: 8px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.table-wrapper td strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESTAURANT PERFORMANCE
+========================================================= */
+
+.restaurant-performance-section {
+    width: 100%;
+    height: 460px;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.restaurant-performance-section .table-wrapper {
+    flex: 1;
+    min-height: 0;
+}
+
+.restaurant-performance-section table {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FULL WIDTH TABLES
+========================================================= */
+
+.customer-spending-section,
+.city-analysis-section,
+.full-width-table-section {
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+.customer-spending-section table,
+.city-analysis-section table,
+.full-width-table-section table {
+    width: 100%;
+}
+
+.full-width-table-section .table-wrapper {
+    width: 100%;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 17px 19px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: left;
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.status-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(226, 55, 68, 0.25);
+    box-shadow: var(--shadow);
+}
+
+.status-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: var(--accent-light);
+    font-size: 22px;
+}
+
+.status-card h3 {
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.status-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   POPULAR RESTAURANT
+========================================================= */
+
+.popular {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 15px;
+    background: var(--accent-light);
+    border: 1px solid rgba(226, 55, 68, 0.10);
+}
+
+.restaurant-icon {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--card);
+    font-size: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.popular h3 {
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.popular p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DELIVERY SUCCESS
+========================================================= */
+
+.success-rate {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.success-circle {
+    width: 125px;
+    height: 125px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background:
+        conic-gradient(
+            var(--accent)
+            calc(var(--success) * 1%),
+            var(--accent-light) 0
+        );
+}
+
+.success-inner {
+    width: 93px;
+    height: 93px;
+    border-radius: 50%;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-inner strong {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.success-inner span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.success-info {
+    flex: 1;
+}
+
+.success-info h3 {
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 7px;
+}
+
+.success-info p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.success-line {
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    overflow: hidden;
+}
+
+.success-fill {
+    height: 100%;
+    border-radius: 10px;
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            #ff6b4a
+        );
+}
+
+.success-caption {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PROFILE OVERLAY
+========================================================= */
+
+.profile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.profile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   PROFILE SIDEBAR
+========================================================= */
+
+.profile-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 340px;
+    max-width: 90vw;
+    height: 100vh;
+    background: var(--card);
+    color: var(--text);
+    padding: 35px 28px;
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.18);
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1000;
+    text-align: center;
+    overflow-y: auto !important;
+    max-height: 100vh;
+}
+
+.profile-sidebar.active {
+    transform: translateX(0);
+}
+
+
+/* PROFILE CLOSE */
+
+.profile-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.profile-close:hover {
+    background: var(--accent);
+    color: white;
+    transform: rotate(90deg);
+}
+
+
+/* PROFILE AVATAR */
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 35px auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 3px solid var(--accent);
+    font-size: 40px;
+}
+
+.profile-sidebar h2 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text);
+}
+
+.profile-role {
+    margin-top: 7px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 0;
+}
+
+
+/* PROFILE MENU */
+
+.profile-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    padding-bottom: 25px !important;
+    text-align: left;
+}
+
+.profile-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 16px;
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.profile-menu-item:hover {
+    background: var(--accent-light);
+    color: var(--accent);
+    transform: translateX(5px);
+}
+
+.profile-menu-item:first-child {
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+
+/* LOGOUT */
+
+.logout-item {
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    padding-top: 20px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    color: #e74c3c !important;
+    background: transparent !important;
+}
+
+.profile-menu .logout-item .menu-icon {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.profile-menu .logout-item:hover {
+    background: rgba(231, 76, 60, 0.08) !important;
+    color: #e74c3c !important;
+}
+
+
+/* =========================================================
+   FILTER BAR
+========================================================= */
+
+.filter-section {
+    margin-top: 25px;
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.filter-header {
+    margin-bottom: 18px;
+}
+
+.filter-header h2 {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.filter-header p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr auto;
+    gap: 14px;
+    align-items: end;
+}
+
+.filter-group label {
+    display: block;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(226, 55, 68, 0.10);
+}
+
+.filter-group input::placeholder {
+    color: var(--muted);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.apply-filter-btn,
+.clear-filter-btn {
+    height: 44px;
+    padding: 0 17px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.apply-filter-btn {
+    border: none;
+    color: white;
+    background:
+        linear-gradient(
+            135deg,
+            #e23744,
+            #ff6b4a
+        );
+}
+
+.apply-filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(226, 55, 68, 0.20);
+}
+
+.clear-filter-btn {
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid rgba(226, 55, 68, 0.15);
+}
+
+.clear-filter-btn:hover {
+    transform: translateY(-2px);
+    background: var(--accent);
+    color: white;
+}
+
+
+/* =========================================================
+   HEADER SEARCH
+========================================================= */
+
+.header {
+    position: relative;
+}
+
+.header-search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 42px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    gap: 4px;
+}
+
+.header-search input {
+    flex: 1;
+    min-width: 120px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    padding: 0 9px;
+    font-size: 12px;
+}
+
+.header-search input::placeholder {
+    color: var(--muted);
+}
+
+.header-search select {
+    height: 34px;
+    border: none;
+    outline: none;
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0 8px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    max-width: 105px;
+}
+
+.header-search button {
+    height: 34px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 9px;
+    background:
+        linear-gradient(
+            135deg,
+            #e23744,
+            #ff6b4a
+        );
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header-search button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(226, 55, 68, 0.20);
+}
+
+.header-search:focus-within {
+    border-color: rgba(226, 55, 68, 0.45);
+    box-shadow:
+        0 0 0 3px rgba(226, 55, 68, 0.08),
+        0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   COMPACT FILTERS
+========================================================= */
+
+.compact-filters {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+    margin-bottom: 5px;
+}
+
+.compact-filter-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.compact-filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.compact-filter-group select {
+    width: 135px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+}
+
+.compact-filter-group select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(226, 55, 68, 0.08);
+}
+
+.compact-apply-btn,
+.compact-clear-btn {
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compact-apply-btn {
+    border: none;
+    color: white;
+    background:
+        linear-gradient(
+            135deg,
+            #e23744,
+            #ff6b4a
+        );
+}
+
+.compact-clear-btn {
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid rgba(226, 55, 68, 0.12);
+}
+
+.compact-apply-btn:hover,
+.compact-clear-btn:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding: 25px 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer p {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   AUTH BUTTONS
+========================================================= */
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.auth-btn {
+    flex: 1;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e23744;
+    border-radius: 11px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #e23744;
+    background: white;
+    transition: all 0.25s ease;
+}
+
+.auth-btn:hover {
+    background: #fff1f2;
+    transform: translateY(-2px);
+}
+
+.auth-btn.active {
+    background:
+        linear-gradient(
+            135deg,
+            #e23744,
+            #ff6b4a
+        );
+    color: white;
+    box-shadow: 0 7px 18px rgba(226, 55, 68, 0.20);
+}
+
+.auth-btn.active:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #c92532,
+            #f45d3f
+        );
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark .popular {
+    border-color: #3a2023;
+}
+
+body.dark .restaurant-icon {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .three-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-search {
+        width: 470px;
+    }
+
+    .header-search select {
+        max-width: 90px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 950px
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .filter-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-actions {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-search {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-grid .chart-section {
+        height: 460px;
+        min-height: 460px;
+    }
+
+    .bottom-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-dashboard-grid .monthly-revenue-section,
+    .bottom-dashboard-grid .insights-section {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .insights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 800px
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 0 4%;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 30px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .three-column {
+        grid-template-columns: 1fr;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-sidebar {
+        width: 300px;
+        padding: 30px 22px;
+    }
+
+    .success-rate {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .success-circle {
+        margin: 0 auto;
+    }
+
+    .success-info {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 12px;
+    }
+
+    .header-search {
+        order: 3;
+        width: 100%;
+        max-width: none;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .container {
+        width: 94%;
+        padding-top: 22px;
+    }
+
+    .hero {
+        padding: 27px 24px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        min-height: auto;
+    }
+
+    .hero-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-text > p {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .hero-icon {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .compact-filter-form {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .compact-filter-group {
+        flex: 1;
+        min-width: 130px;
+    }
+
+    .compact-filter-group select {
+        width: 100%;
+    }
+
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .apply-filter-btn,
+    .clear-filter-btn {
+        flex: 1;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .theme-btn,
+    .refresh-btn {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .profile-btn {
+        max-width: 130px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 8px 10px;
+    }
+
+    .container {
+        width: 94%;
+        padding-top: 25px;
+    }
+
+    .hero {
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .chart-section {
+        padding: 18px;
+    }
+
+    .chart-container {
+        height: 280px;
+    }
+
+    .charts-grid .chart-section {
+        height: 420px;
+        min-height: 420px;
+    }
+
+    .charts-grid .chart-container {
+        height: 320px;
+        min-height: 320px;
+    }
+
+    .bottom-dashboard-grid .monthly-chart-container {
+        height: 260px;
+        min-height: 260px;
+    }
+
+    .table-wrapper th {
+        padding: 13px 12px;
+        font-size: 10px;
+    }
+
+    .table-wrapper td {
+        padding: 13px 12px;
+        font-size: 12px;
+    }
+
+    .filter-section {
+        padding: 18px;
+    }
+
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .apply-filter-btn,
+    .clear-filter-btn {
+        flex: 1;
+    }
+
+    .success-rate {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .success-circle {
+        margin: 0 auto;
+    }
+
+    .success-info {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .header-search {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 6px;
+    }
+
+    .header-search input {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .header-search select {
+        flex: 1;
+        max-width: none;
+    }
+
+    .header-search button {
+        flex: 0 0 auto;
+    }
+
+    .chart-section {
+        padding: 18px;
+    }
+
+    .monthly-chart-container {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .bottom-dashboard-grid .monthly-chart-container {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .insight-card {
+        padding: 18px;
+    }
+
+    .insight-name {
+        font-size: 15px;
+    }
+
+    .insight-value {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 450px
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero-icon {
+        display: none;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .header-search {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        letter-spacing: -1.5px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .theme-btn {
+        font-size: 0;
+    }
+
+    .theme-btn::first-letter {
+        font-size: 16px;
+    }
+
+    .refresh-btn {
+        font-size: 0;
+    }
+
+    .refresh-btn::first-letter {
+        font-size: 16px;
+    }
+
+    .profile-btn {
+        max-width: 45px;
+        justify-content: center;
+        font-size: 0;
+    }
+
+    .profile-btn span {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   FINAL LAYOUT FIX
+========================================================= */
+
+/* Restaurant Performance ko unnecessary vertical push
+   se bachane ke liye analytics blocks controlled height me */
+
+.restaurant-performance-section,
+.monthly-revenue-section {
+    box-sizing: border-box;
+}
+
+
+/* Customer + City tables always full width */
+
+.customer-spending-section,
+.city-analysis-section {
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+
+/* Desktop */
+
+@media (min-width: 901px) {
+
+    .charts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bottom-dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .bottom-dashboard-grid .monthly-revenue-section,
+    .bottom-dashboard-grid .insights-section {
+        height: 460px;
+        min-height: 460px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-performance-section {
+        height: auto;
+        min-height: 0;
+    }
+}
+
+
+/* Small mobile */
+
+@media (max-width: 600px) {
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-performance-section {
+        height: auto;
+        min-height: 0;
+    }
+}
+/* =========================
+   KEY INSIGHTS - ALIGNMENT FIX
+   ========================= */
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    align-items: start;
+}
+
+.insights-grid > * {
+    margin-top: 0 !important;
+    align-self: start;
+}
+
+.insights-grid .section-title {
+    margin-top: 0 !important;
+}
+
+.insights-grid .insight-card {
+    margin-top: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+/* =========================
+   RESTAURANT REVENUE + CITY ORDERS
+   ONLY THIS SECTION
+   ========================= */
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    align-items: start;
+}
+
+.charts-grid .chart-section {
+    width: 100%;
+    height: 575px;
+    min-height: 575px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.charts-grid .chart-container {
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
+    position: relative;
+}
+
+.charts-grid .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .charts-grid .chart-section {
+        height: auto;
+        min-height: 0;
+    }
+
+    .charts-grid .chart-container {
+        height: 360px;
+        min-height: 360px;
+    }
+}
+/* =========================================
+   MONTHLY REVENUE + RESTAURANT PERFORMANCE
+   ONLY THIS SECTION
+   ========================================= */
+
+.monthly-revenue-section,
+.restaurant-performance-section {
+    width: 100%;
+    height: 570px !important;
+    min-height: 570px !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+/* Monthly Revenue chart size */
+.monthly-revenue-section .chart-container {
+    height: 430px !important;
+    min-height: 430px !important;
+    position: relative;
+}
+
+/* Restaurant Performance table size */
+.restaurant-performance-section .table-wrapper {
+    height: 430px !important;
+    min-height: 430px !important;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Make both sections equal */
+.monthly-revenue-section .chart-container,
+.restaurant-performance-section .table-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   KEEP BOTH IN SAME ROW
+   ========================================= */
+
+.monthly-revenue-section,
+.restaurant-performance-section {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* If they are inside the dashboard bottom grid */
+.bottom-dashboard-grid {
+    grid-template-columns: 1fr 1fr !important;
+    align-items: start !important;
+}
+
+.bottom-dashboard-grid .monthly-revenue-section,
+.bottom-dashboard-grid .restaurant-performance-section {
+    width: 100% !important;
+    height: 570px !important;
+    min-height: 570px !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .monthly-revenue-section,
+    .restaurant-performance-section {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        display: block;
+    }
+
+    .monthly-revenue-section .chart-container,
+    .restaurant-performance-section .table-wrapper {
+        height: 360px !important;
+        min-height: 360px !important;
+    }
+
+    .bottom-dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+/* =========================================
+   MONTHLY REVENUE — MAKE SAME SIZE AS
+   RESTAURANT PERFORMANCE
+   ========================================= */
+
+.monthly-revenue-section {
+    width: 100% !important;
+    height: 570px !important;
+    min-height: 570px !important;
+    max-height: 570px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.monthly-revenue-section .chart-container {
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: 430px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.monthly-revenue-section .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* Restaurant Performance — keep same height */
+
+.restaurant-performance-section {
+    height: 570px !important;
+    min-height: 570px !important;
+    max-height: 570px !important;
+    box-sizing: border-box;
+}
+
+.restaurant-performance-section .table-wrapper {
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: 430px !important;
+    box-sizing: border-box;
+}
+/* FINAL SIZE FIX - ONLY THESE TWO SECTIONS */
+
+.monthly-revenue-section {
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px !important;
+}
+
+.monthly-revenue-section .chart-container {
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
+}
+
+.restaurant-performance-section {
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px !important;
+}
+
+.restaurant-performance-section .table-wrapper {
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
+}

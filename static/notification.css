@@ -1,0 +1,214 @@
+/* ==========================
+   NOTIFICATION BUTTON
+========================== */
+
+.notification-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.notification-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #30343a;
+    border-radius: 12px;
+    background: #1c1f22;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.25s ease;
+}
+
+.notification-btn:hover {
+    background: #25282c;
+    transform: translateY(-1px);
+}
+
+/* Red notification dot */
+
+.notification-dot {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 8px;
+    height: 8px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    border: 2px solid #1c1f22;
+}
+
+
+/* ==========================
+   NOTIFICATION DROPDOWN
+========================== */
+
+.notification-panel {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    width: 330px;
+    background: #191b1d;
+    border: 1px solid #30343a;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: 0.25s ease;
+}
+
+.notification-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ==========================
+   PANEL HEADER
+========================== */
+
+.notification-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 18px;
+    border-bottom: 1px solid #30343a;
+}
+
+.notification-panel-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.notification-panel-header span {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+
+/* ==========================
+   NOTIFICATION ITEM
+========================== */
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 18px;
+    border-bottom: 1px solid #282c30;
+    transition: 0.2s ease;
+}
+
+.notification-item:hover {
+    background: #202327;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #3b1117;
+    border: 1px solid #7f1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.notification-item-content h4 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.notification-item-content p {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+/* ==========================
+   LIGHT MODE
+========================== */
+
+body:not(.dark) .notification-btn {
+    background: #ffffff;
+    color: #222222;
+    border-color: #dddddd;
+}
+
+body:not(.dark) .notification-btn:hover {
+    background: #f5f5f5;
+}
+
+body:not(.dark) .notification-dot {
+    border-color: #ffffff;
+}
+
+body:not(.dark) .notification-panel {
+    background: #ffffff;
+    border-color: #dddddd;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+body:not(.dark) .notification-panel-header {
+    border-color: #eeeeee;
+}
+
+body:not(.dark) .notification-panel-header h3 {
+    color: #222222;
+}
+
+body:not(.dark) .notification-panel-header span {
+    color: #777777;
+}
+
+body:not(.dark) .notification-item {
+    border-color: #eeeeee;
+}
+
+body:not(.dark) .notification-item:hover {
+    background: #f8f8f8;
+}
+
+body:not(.dark) .notification-item-content h4 {
+    color: #222222;
+}
+
+body:not(.dark) .notification-item-content p {
+    color: #777777;
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+    .notification-panel {
+        position: fixed;
+        top: 70px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+    }
+
+}

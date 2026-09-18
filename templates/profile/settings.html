@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - BiteMetrics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='settings.css') }}">
+
+</head>
+
+
+<body class="settings-page">
+
+    <div class="settings-wrapper">
+
+        <!-- BACK TO DASHBOARD -->
+        <a href="{{ url_for('home') }}"
+           class="back-dashboard">
+            ← Back to Dashboard
+        </a>
+
+
+        <!-- SETTINGS CARD -->
+        <div class="settings-card">
+
+
+            <!-- HEADER -->
+            <div class="settings-header">
+
+                <div class="settings-icon">
+                    ⚙️
+                </div>
+
+                <div>
+
+                    <h1>Settings</h1>
+
+                    <p>
+                        Manage your BiteMetrics dashboard preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-divider"></div>
+
+
+            <!-- APPEARANCE -->
+            <div class="settings-section">
+
+                <div class="settings-section-title">
+
+                    <div>
+                        <h2>🎨 Appearance</h2>
+
+                        <p>
+                            Customize how BiteMetrics looks.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <div class="setting-item-icon">
+                            🌙
+                        </div>
+
+                        <div>
+
+                            <h3>Dark Mode</h3>
+
+                            <p>
+                                Use dark mode for a comfortable viewing
+                                experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                  <button 
+                 type="button" 
+                class="setting-btn theme-btn" 
+                onclick="toggleTheme()"> 
+
+                🌙 Dark Mode
+
+            </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD -->
+            <div class="settings-section">
+
+                <div class="settings-section-title">
+
+                    <div>
+
+                        <h2>📊 Dashboard</h2>
+
+                        <p>
+                            Your analytics dashboard preferences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <div class="setting-item-icon">
+                            🔎
+                        </div>
+
+                        <div>
+
+                            <h3>Search & Filters</h3>
+
+                            <p>
+                                Search orders and filter analytics by
+                                city or order status.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="setting-status">
+                        Available
+                    </span>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <div class="setting-item-icon">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <h3>Analytics</h3>
+
+                            <p>
+                                View restaurant, customer and city-wise
+                                performance insights.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="setting-status">
+                        Enabled
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+            <div class="settings-section">
+
+                <div class="settings-section-title">
+
+                    <div>
+
+                        <h2>👤 Account</h2>
+
+                        <p>
+                            Manage your BiteMetrics account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <div class="setting-item-icon">
+                            ✏️
+                        </div>
+
+                        <div>
+
+                            <h3>Edit Profile</h3>
+
+                            <p>
+                                Update your profile information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ url_for('edit_profile') }}"
+                       class="setting-btn">
+
+                        Edit
+
+                    </a>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <div class="setting-item-icon">
+                            🚪
+                        </div>
+
+                        <div>
+
+                            <h3>Logout</h3>
+
+                            <p>
+                                Sign out from your BiteMetrics account.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ url_for('logout') }}"
+                       class="logout-btn">
+
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ABOUT -->
+            <div class="settings-section">
+
+                <div class="settings-section-title">
+
+                    <div>
+
+                        <h2>ℹ️ About</h2>
+
+                        <p>
+                            Information about the BiteMetrics project.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <div class="setting-item-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <h3>BiteMetrics</h3>
+
+                            <p>
+                                Food Delivery Analytics Dashboard
+                                powered by SQL and Flask.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ url_for('about') }}"
+                       class="setting-btn">
+
+                        View
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="settings-footer">
+
+                <strong>BiteMetrics</strong>
+
+                <span>
+                    Simple • Clean • SQL Powered
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- EXISTING THEME SCRIPT -->
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>

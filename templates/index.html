@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiteMetrics</title>
+
+    <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark-loading");
+        }
+    </script>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='notification.css') }}">
+
+    <style>
+
+        /* =========================================
+           PREMIUM HERO
+        ========================================== */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            padding: 38px 42px;
+            border-radius: 28px;
+
+            background: linear-gradient(
+                135deg,
+                #ff4d5a 0%,
+                #ff5b50 50%,
+                #ff7043 100%
+            );
+
+            box-shadow:
+                0 18px 45px rgba(255, 80, 80, 0.22);
+
+            color: white;
+        }
+
+
+        .hero-content {
+            position: relative;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            min-height: 175px;
+        }
+
+
+        .hero-text {
+            width: 100%;
+        }
+
+
+        .hero-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 100%;
+            margin-bottom: 18px;
+        }
+
+
+        .hero-greeting {
+            font-size: 15px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+
+        .hero .datetime {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 9px 15px;
+
+            border: 1px solid rgba(255, 255, 255, 0.30);
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(10px);
+
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+
+            white-space: nowrap;
+        }
+
+
+        .hero h1 {
+            margin: 0;
+
+            font-size: 48px;
+            line-height: 1.08;
+            font-weight: 800;
+
+            letter-spacing: -1.8px;
+
+            color: white;
+        }
+
+
+        .hero-text > p {
+            max-width: 650px;
+
+            margin: 14px 0 20px;
+
+            font-size: 16px;
+            line-height: 1.6;
+
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+
+        .hero-tags span {
+            padding: 8px 13px;
+
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(8px);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            color: white;
+
+            transition: 0.25s ease;
+        }
+
+
+        .hero-tags span:hover {
+            background: rgba(255, 255, 255, 0.20);
+            transform: translateY(-2px);
+        }
+
+
+        .hero-icon {
+            flex-shrink: 0;
+
+            width: 92px;
+            height: 92px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-left: 30px;
+
+            border: 1px solid rgba(255, 255, 255, 0.30);
+            border-radius: 26px;
+
+            background: rgba(255, 255, 255, 0.13);
+
+            backdrop-filter: blur(10px);
+
+            font-size: 43px;
+        }
+
+
+
+        /* =========================================
+           THEME BUTTON
+        ========================================== */
+
+        .theme-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            min-width: 125px;
+            height: 48px;
+
+            padding: 0 15px;
+
+            border: 1px solid #30343a;
+            border-radius: 12px;
+
+            background: #1c1f22;
+            color: #ffffff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+        }
+
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+
+            background: #272a2e;
+            border-color: #ff5757;
+        }
+
+
+        .theme-icon {
+            font-size: 17px;
+            line-height: 1;
+        }
+
+
+
+        /* =========================================
+           KEY INSIGHTS - 2 x 2 LAYOUT
+        ========================================== */
+
+        .insights-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 24px;
+
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+
+        .insights-grid .insight-card {
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* Top row */
+
+        .popular-restaurant-card {
+            grid-column: 1;
+        }
+
+
+        .delivery-success-card {
+            grid-column: 2;
+        }
+
+
+        /* Bottom row */
+
+        .highest-revenue-card {
+            grid-column: 1;
+        }
+
+
+        .highest-spending-card {
+            grid-column: 2;
+        }
+
+
+
+        /* =========================================
+           CHART HEIGHT
+        ========================================== */
+
+        .chart-section .chart-container {
+            height: 360px;
+            min-height: 360px;
+        }
+
+
+
+        /* =========================================
+           MONTHLY + RESTAURANT SAME SIZE
+        ========================================== */
+
+        .monthly-revenue-section,
+        .restaurant-performance-section {
+            width: 100%;
+        }
+
+
+        .monthly-revenue-section .chart-container,
+        .restaurant-performance-section .table-wrapper {
+            height: 360px;
+            min-height: 360px;
+
+            box-sizing: border-box;
+        }
+
+
+
+        /* =========================================
+           CUSTOMER + CITY FULL WIDTH
+        ========================================== */
+
+        .full-width-table-section {
+            width: 100%;
+            grid-column: 1 / -1;
+        }
+
+
+        .full-width-table-section .table-wrapper {
+            width: 100%;
+        }
+
+
+
+        /* =========================================
+           TABLE SIZE
+        ========================================== */
+
+        .restaurant-performance-section table,
+        .full-width-table-section table {
+            width: 100%;
+        }
+
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 28px 24px;
+            }
+
+
+            .hero-content {
+                min-height: auto;
+            }
+
+
+            .hero-top-row {
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+
+            .hero-text > p {
+                font-size: 14px;
+            }
+
+
+            .hero-icon {
+                display: none;
+            }
+
+
+            .hero .datetime {
+                font-size: 12px;
+            }
+
+
+            .theme-btn {
+                min-width: 110px;
+                height: 44px;
+            }
+
+
+
+            /* Insights become single column */
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .popular-restaurant-card,
+            .delivery-success-card,
+            .highest-revenue-card,
+            .highest-spending-card {
+                grid-column: auto;
+            }
+
+
+
+            .chart-section .chart-container {
+                height: 300px;
+                min-height: 300px;
+            }
+
+
+            .monthly-revenue-section .chart-container,
+            .restaurant-performance-section .table-wrapper {
+                height: 300px;
+                min-height: 300px;
+            }
+
+
+            .full-width-table-section {
+                grid-column: auto;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+    <script>
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark");
+        }
+
+    </script>
+
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+
+        <div class="logo">
+            BiteMetrics
+        </div>
+
+
+        <div class="header-actions">
+
+
+            <!-- SEARCH + FILTERS -->
+
+            <form
+                method="GET"
+                action="/"
+                class="header-search"
+                id="header-search-form">
+
+
+                <input
+                    type="text"
+                    name="search"
+                    value="{{ search }}"
+                    placeholder="🔎 Search...">
+
+
+                <select name="city">
+
+                    <option value="">
+                        All Cities
+                    </option>
+
+
+                    {% for city in all_cities %}
+
+                    <option
+                        value="{{ city.city }}"
+                        {% if city_filter == city.city %}
+                        selected
+                        {% endif %}>
+
+                        {{ city.city }}
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+
+
+                <select name="status">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+
+                    <option
+                        value="Delivered"
+                        {% if status_filter == "Delivered" %}
+                        selected
+                        {% endif %}>
+
+                        Delivered
+
+                    </option>
+
+
+                    <option
+                        value="Cancelled"
+                        {% if status_filter == "Cancelled" %}
+                        selected
+                        {% endif %}>
+
+                        Cancelled
+
+                    </option>
+
+                </select>
+
+
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+
+
+            <!-- THEME -->
+
+            <button
+                type="button"
+                class="theme-btn"
+                onclick="toggleTheme()">
+
+                <span class="theme-icon">
+                    🌙
+                </span>
+
+                <span class="theme-text">
+                    Dark Mode
+                </span>
+
+            </button>
+
+
+
+            <!-- NOTIFICATION -->
+
+            <div class="notification-wrapper">
+
+
+                <button
+                    type="button"
+                    class="notification-btn"
+                    onclick="toggleNotifications()"
+                    aria-label="Notifications">
+
+                    🔔
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div
+                    class="notification-panel"
+                    id="notificationPanel">
+
+
+                    <div class="notification-panel-header">
+
+                        <h3>
+                            Notifications
+                        </h3>
+
+                        <span>
+                            Recent activity
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-item-icon">
+                            📦
+                        </div>
+
+                        <div class="notification-item-content">
+
+                            <h4>
+                                Order Activity
+                            </h4>
+
+                            <p>
+                                New food delivery orders have been recorded.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-item-icon">
+                            📊
+                        </div>
+
+                        <div class="notification-item-content">
+
+                            <h4>
+                                Analytics Updated
+                            </h4>
+
+                            <p>
+                                Your dashboard analytics are up to date.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-item-icon">
+                            ⚠️
+                        </div>
+
+                        <div class="notification-item-content">
+
+                            <h4>
+                                Order Status
+                            </h4>
+
+                            <p>
+                                Some orders are marked as cancelled.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROFILE -->
+
+            <button
+                type="button"
+                class="profile-btn"
+                onclick="openProfile()">
+
+                👤 {{ username }}
+
+                <span>
+                    ⌄
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PROFILE OVERLAY
+    ========================================== -->
+
+    <div
+        class="profile-overlay"
+        id="profileOverlay"
+        onclick="closeProfile()">
+    </div>
+
+
+
+    <!-- =========================================
+         PROFILE SIDEBAR
+    ========================================== -->
+
+    <aside
+        class="profile-sidebar"
+        id="profileSidebar">
+
+
+        <button
+            class="profile-close"
+            onclick="closeProfile()">
+
+            ✕
+
+        </button>
+
+
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+
+        <h2>
+            {{ username }}
+        </h2>
+
+
+        <p class="profile-role">
+            {{ role }}
+        </p>
+
+
+        <div class="profile-divider"></div>
+
+
+        <div class="profile-menu">
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="profile-menu-item">
+
+                <span class="menu-icon">
+                    📊
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="{{ url_for('edit_profile') }}"
+                class="profile-menu-item">
+
+                <span class="menu-icon">
+                    ✏️
+                </span>
+
+                <span>
+                    Edit Profile
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="{{ url_for('saved') }}"
+                class="profile-menu-item">
+
+                <span class="menu-icon">
+                    💾
+                </span>
+
+                <span>
+                    Saved
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="{{ url_for('feedback') }}"
+                class="profile-menu-item">
+
+                <span class="menu-icon">
+                    💬
+                </span>
+
+                <span>
+                    Your Feedback
+                </span>
+
+            </a>
+
+     <a href="{{ url_for('feedback') }}" class="profile-menu-item">
+
+        <span class="menu-icon">
+        ⚠️
+        </span>
+
+       <span>
+        Report a Problem
+    </span>
+
+    </a>
+
+
+
+            <a
+                href="{{ url_for('about') }}"
+                class="profile-menu-item">
+
+                <span class="menu-icon">
+                    ℹ️
+                </span>
+
+                <span>
+                    About BiteMetrics
+                </span>
+
+            </a>
+
+
+
+            <div class="profile-divider"></div>
+
+
+
+            <a
+                href="{{ url_for('settings') }}"
+                class="profile-menu-item">
+
+                <span class="menu-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="{{ url_for('logout') }}"
+                class="profile-menu-item logout-item">
+
+                <span class="menu-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-text">
+
+
+                    <div class="hero-top-row">
+
+
+                        <span class="hero-greeting">
+                            👋 Welcome back, {{ username }}
+                        </span>
+
+
+                        <div class="datetime">
+
+                            🕒
+
+                            <span id="dateTime"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <h1>
+                        BiteMetrics
+                    </h1>
+
+
+                    <p>
+                        Transform food delivery data into
+                        clear and actionable business insights.
+                    </p>
+
+
+                    <div class="hero-tags">
+
+                        <span>
+                            📊 SQL Analytics
+                        </span>
+
+                        <span>
+                            🍔 Restaurant Insights
+                        </span>
+
+                        <span>
+                            📈 Business Performance
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-icon">
+                    📊
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SUMMARY CARDS
+        ========================================== -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🛵
+                </div>
+
+                <h3>
+                    Total Orders
+                </h3>
+
+                <div class="value">
+                    {{ total_orders }}
+                </div>
+
+                <div class="small-text">
+                    All orders placed
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Total Customers
+                </h3>
+
+                <div class="value">
+                    {{ total_customers }}
+                </div>
+
+                <div class="small-text">
+                    Registered customers
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏪
+                </div>
+
+                <h3>
+                    Total Restaurants
+                </h3>
+
+                <div class="value">
+                    {{ total_restaurants }}
+                </div>
+
+                <div class="small-text">
+                    Partner restaurants
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Total Revenue
+                </h3>
+
+                <div class="value">
+                    ₹ {{ total_revenue }}
+                </div>
+
+                <div class="small-text">
+                    From delivered orders
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ❌
+                </div>
+
+                <h3>
+                    Cancelled Orders
+                </h3>
+
+                <div class="value">
+                    {{ cancelled_orders }}
+                </div>
+
+                <div class="small-text">
+                    Orders cancelled
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Average Order Value
+                </h3>
+
+                <div class="value">
+                    ₹ {{ average_order_value }}
+                </div>
+
+                <div class="small-text">
+                    Average delivered order
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             KEY INSIGHTS
+        ========================================== -->
+
+        <div class="insights-grid">
+
+
+            <!-- =====================================
+                 MOST POPULAR RESTAURANT
+            ====================================== -->
+
+            <section class="section insight-card popular-restaurant-card">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        🔥 Most Popular Restaurant
+                    </h2>
+
+                    <span class="section-badge">
+                        Top Restaurant
+                    </span>
+
+                </div>
+
+
+                {% if popular_restaurant %}
+
+                <div class="popular">
+
+
+                    <div class="restaurant-icon">
+                        🍽️
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            {{ popular_restaurant.restaurant_name }}
+                        </h3>
+
+                        <p>
+                            {{ popular_restaurant.total_orders }}
+                            delivered orders
+                        </p>
+
+                    </div>
+
+                </div>
+
+                {% else %}
+
+                <p>
+                    No restaurant data available.
+                </p>
+
+                {% endif %}
+
+            </section>
+
+
+
+            <!-- =====================================
+                 DELIVERY SUCCESS RATE
+            ====================================== -->
+
+            <section class="section insight-card delivery-success-card">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        🚚 Delivery Success Rate
+                    </h2>
+
+                    <span class="section-badge">
+                        Performance
+                    </span>
+
+                </div>
+
+
+                <div class="success-rate">
+
+
+                    <div
+                        class="success-circle"
+                        style="--success: {{ delivery_success_rate }};">
+
+                        <div class="success-inner">
+
+                            <strong>
+                                {{ delivery_success_rate }}%
+                            </strong>
+
+                            <span>
+                                Delivered
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="success-info">
+
+                        <h3>
+                            Delivery Performance
+                        </h3>
+
+                        <p>
+                            Percentage of orders successfully
+                            delivered compared with total orders.
+                        </p>
+
+
+                        <div class="success-line">
+
+                            <div
+                                class="success-fill"
+                                style="width: {{ delivery_success_rate }}%;">
+                            </div>
+
+                        </div>
+
+
+                        <span class="success-caption">
+                            {{ delivery_success_rate }}%
+                            successful deliveries
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 HIGHEST REVENUE RESTAURANT
+            ====================================== -->
+
+            <section class="section insight-card highest-revenue-card">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        🏆 Highest Revenue Restaurant
+                    </h2>
+
+                    <span class="section-badge">
+                        Revenue Leader
+                    </span>
+
+                </div>
+
+
+                {% if highest_revenue_restaurant %}
+
+
+                <div class="popular">
+
+
+                    <div class="restaurant-icon">
+                        💰
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            {{ highest_revenue_restaurant.restaurant_name }}
+                        </h3>
+
+                        <p>
+                            Revenue:
+                            ₹ {{ highest_revenue_restaurant.total_revenue }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                {% else %}
+
+                <p>
+                    No restaurant data available.
+                </p>
+
+                {% endif %}
+
+            </section>
+
+
+
+            <!-- =====================================
+                 HIGHEST SPENDING CUSTOMER
+            ====================================== -->
+
+            <section class="section insight-card highest-spending-card">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        👤 Highest Spending Customer
+                    </h2>
+
+                    <span class="section-badge">
+                        Customer Leader
+                    </span>
+
+                </div>
+
+
+                {% if highest_spending_customer %}
+
+
+                <div class="popular">
+
+
+                    <div class="restaurant-icon">
+                        💳
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            {{ highest_spending_customer.customer_name }}
+                        </h3>
+
+                        <p>
+                            Total Spending:
+                            ₹ {{ highest_spending_customer.total_spending }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                {% else %}
+
+                <p>
+                    No customer data available.
+                </p>
+
+                {% endif %}
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =========================================
+             ORDER STATUS
+        ========================================== -->
+
+        <section class="section">
+
+
+            <div class="section-title">
+
+                <h2>
+                    📦 Order Status Overview
+                </h2>
+
+                <span class="section-badge">
+                    Order Insights
+                </span>
+
+            </div>
+
+
+            <div class="status-grid">
+
+
+                {% for status in status_data %}
+
+
+                <div class="status-card">
+
+
+                    <div class="status-icon">
+
+                        {% if status.status == "Delivered" %}
+
+                            🟢
+
+                        {% else %}
+
+                            🔴
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            {{ status.status }}
+                        </h3>
+
+                        <p>
+                            {{ status.total_orders }} orders
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CHARTS + TABLES
+        ========================================== -->
+
+        <div class="charts-grid">
+
+
+            <!-- =====================================
+                 RESTAURANT REVENUE
+            ====================================== -->
+
+            <section class="section chart-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        📈 Restaurant Revenue
+                    </h2>
+
+                    <span class="section-badge">
+                        Revenue
+                    </span>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="restaurantChart"></canvas>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 CITY ORDERS
+            ====================================== -->
+
+            <section class="section chart-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        🏙️ City-wise Orders
+                    </h2>
+
+                    <span class="section-badge">
+                        Orders
+                    </span>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="cityChart"></canvas>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 MONTHLY REVENUE
+            ====================================== -->
+
+            <section class="section chart-section monthly-revenue-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        📅 Monthly Revenue Trend
+                    </h2>
+
+                    <span class="section-badge">
+                        Revenue Trend
+                    </span>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="monthlyRevenueChart"></canvas>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 RESTAURANT PERFORMANCE
+            ====================================== -->
+
+            <section class="section restaurant-performance-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        🏪 Restaurant Performance
+                    </h2>
+
+                    <span class="section-badge">
+                        SQL Analysis
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Restaurant
+                                </th>
+
+                                <th>
+                                    Orders
+                                </th>
+
+                                <th>
+                                    Revenue
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody>
+
+
+                            {% for restaurant in restaurant_data %}
+
+
+                            <tr>
+
+                                <td>
+                                    🍴 {{ restaurant.restaurant_name }}
+                                </td>
+
+
+                                <td>
+
+                                    <span class="number-badge">
+                                        {{ restaurant.total_orders }}
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong>
+                                        ₹ {{ restaurant.total_revenue }}
+                                    </strong>
+
+                                </td>
+
+                            </tr>
+
+
+                            {% endfor %}
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 CUSTOMER SPENDING
+            ====================================== -->
+
+            <section class="section full-width-table-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        👥 Customer Spending
+                    </h2>
+
+                    <span class="section-badge">
+                        Customer Insights
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Orders
+                                </th>
+
+                                <th>
+                                    Total Spent
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody>
+
+
+                            {% for customer in customer_data %}
+
+
+                            <tr>
+
+                                <td>
+                                    👤 {{ customer.customer_name }}
+                                </td>
+
+
+                                <td>
+
+                                    <span class="number-badge">
+                                        {{ customer.total_orders }}
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong>
+                                        ₹ {{ customer.total_spent }}
+                                    </strong>
+
+                                </td>
+
+                            </tr>
+
+
+                            {% endfor %}
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 CITY ANALYSIS
+            ====================================== -->
+
+            <section class="section full-width-table-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        📍 City-wise Analysis
+                    </h2>
+
+                    <span class="section-badge">
+                        Location Insights
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    City
+                                </th>
+
+                                <th>
+                                    Orders
+                                </th>
+
+                                <th>
+                                    Revenue
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody>
+
+
+                            {% for city in city_data %}
+
+
+                            <tr>
+
+                                <td>
+                                    📍 {{ city.city }}
+                                </td>
+
+
+                                <td>
+
+                                    <span class="number-badge">
+                                        {{ city.total_orders }}
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong>
+                                        ₹ {{ city.total_revenue }}
+                                    </strong>
+
+                                </td>
+
+                            </tr>
+
+
+                            {% endfor %}
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <div class="footer">
+
+
+            <p>
+                BiteMetrics
+            </p>
+
+
+            <span>
+                Made By Shreya Kaushal
+            </span>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         CHART DATA + CHARTS
+    ========================================== -->
+
+    <script>
+
+
+        const isDark =
+            document.body.classList.contains("dark");
+
+
+        const chartTextColor =
+            isDark
+                ? "#f5f5f5"
+                : "#333333";
+
+
+        const chartGridColor =
+            isDark
+                ? "#333333"
+                : "#eeeeee";
+
+
+
+        /* =========================================
+           RESTAURANT DATA
+        ========================================== */
+
+        const restaurantNames = [
+
+            {% for restaurant in restaurant_data %}
+
+                "{{ restaurant.restaurant_name }}",
+
+            {% endfor %}
+
+        ];
+
+
+        const restaurantRevenue = [
+
+            {% for restaurant in restaurant_data %}
+
+                {{ restaurant.total_revenue }},
+
+            {% endfor %}
+
+        ];
+
+
+
+        /* =========================================
+           CITY DATA
+        ========================================== */
+
+        const cityNames = [
+
+            {% for city in city_data %}
+
+                "{{ city.city }}",
+
+            {% endfor %}
+
+        ];
+
+
+        const cityOrders = [
+
+            {% for city in city_data %}
+
+                {{ city.total_orders }},
+
+            {% endfor %}
+
+        ];
+
+
+
+        /* =========================================
+           MONTHLY REVENUE DATA
+        ========================================== */
+
+        const monthlyRevenueMonths = [
+
+            {% for row in monthly_revenue %}
+
+                "{{ row.month }}",
+
+            {% endfor %}
+
+        ];
+
+
+        const monthlyRevenueValues = [
+
+            {% for row in monthly_revenue %}
+
+                {{ row.revenue }},
+
+            {% endfor %}
+
+        ];
+
+
+
+        /* =========================================
+           RESTAURANT REVENUE CHART
+        ========================================== */
+
+        const restaurantCanvas =
+            document.getElementById("restaurantChart");
+
+
+        if (restaurantCanvas) {
+
+
+            new Chart(
+                restaurantCanvas,
+                {
+
+                    type: "bar",
+
+
+                    data: {
+
+                        labels: restaurantNames,
+
+
+                        datasets: [
+
+                            {
+
+                                label: "Revenue (₹)",
+
+                                data: restaurantRevenue,
+
+                                backgroundColor: "#e23744",
+
+                                hoverBackgroundColor: "#c92532",
+
+                                borderRadius: 10,
+
+                                borderSkipped: false,
+
+                                borderWidth: 0
+
+                            }
+
+                        ]
+
+                    },
+
+
+                    options: {
+
+                        responsive: true,
+
+                        maintainAspectRatio: false,
+
+
+                        animation: {
+
+                            duration: 900,
+
+                            easing: "easeOutQuart"
+
+                        },
+
+
+                        plugins: {
+
+                            legend: {
+
+                                display: false
+
+                            },
+
+
+                            tooltip: {
+
+                                backgroundColor:
+                                    isDark
+                                        ? "#222222"
+                                        : "#ffffff",
+
+
+                                titleColor:
+                                    chartTextColor,
+
+
+                                bodyColor:
+                                    chartTextColor,
+
+
+                                borderColor:
+                                    isDark
+                                        ? "#444444"
+                                        : "#eeeeee",
+
+
+                                borderWidth: 1,
+
+
+                                padding: 12,
+
+
+                                callbacks: {
+
+                                    label:
+                                        function(context) {
+
+                                            return " Revenue: ₹ " +
+                                                context.raw;
+
+                                        }
+
+                                }
+
+                            }
+
+                        },
+
+
+                        scales: {
+
+                            y: {
+
+                                beginAtZero: true,
+
+
+                                ticks: {
+
+                                    color:
+                                        chartTextColor,
+
+
+                                    callback:
+                                        function(value) {
+
+                                            return "₹ " + value;
+
+                                        }
+
+                                },
+
+
+                                grid: {
+
+                                    color:
+                                        chartGridColor,
+
+                                    drawBorder: false
+
+                                }
+
+                            },
+
+
+                            x: {
+
+                                ticks: {
+
+                                    color:
+                                        chartTextColor
+
+                                },
+
+
+                                grid: {
+
+                                    display: false
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            );
+
+        }
+
+
+
+        /* =========================================
+           CITY ORDERS CHART
+        ========================================== */
+
+        const cityCanvas =
+            document.getElementById("cityChart");
+
+
+        if (cityCanvas) {
+
+
+            new Chart(
+                cityCanvas,
+                {
+
+                    type: "doughnut",
+
+
+                    data: {
+
+                        labels: cityNames,
+
+
+                        datasets: [
+
+                            {
+
+                                label: "Orders",
+
+                                data: cityOrders,
+
+
+                                backgroundColor: [
+
+                                    "#e23744",
+                                    "#ff6b4a",
+                                    "#f59e0b",
+                                    "#16a34a",
+                                    "#6366f1"
+
+                                ],
+
+
+                                borderWidth: 3,
+
+
+                                borderColor:
+                                    isDark
+                                        ? "#1c1c1c"
+                                        : "#ffffff",
+
+
+                                hoverOffset: 8
+
+                            }
+
+                        ]
+
+                    },
+
+
+                    options: {
+
+                        responsive: true,
+
+                        maintainAspectRatio: false,
+
+                        cutout: "65%",
+
+
+                        animation: {
+
+                            duration: 1000,
+
+                            easing: "easeOutQuart"
+
+                        },
+
+
+                        plugins: {
+
+                            legend: {
+
+                                position: "bottom",
+
+
+                                labels: {
+
+                                    color:
+                                        chartTextColor,
+
+                                    padding: 18,
+
+                                    usePointStyle: true,
+
+                                    pointStyle: "circle"
+
+                                }
+
+                            },
+
+
+                            tooltip: {
+
+                                backgroundColor:
+                                    isDark
+                                        ? "#222222"
+                                        : "#ffffff",
+
+
+                                titleColor:
+                                    chartTextColor,
+
+
+                                bodyColor:
+                                    chartTextColor,
+
+
+                                borderColor:
+                                    isDark
+                                        ? "#444444"
+                                        : "#eeeeee",
+
+
+                                borderWidth: 1,
+
+                                padding: 12
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            );
+
+        }
+
+
+
+        /* =========================================
+           MONTHLY REVENUE TREND
+        ========================================== */
+
+        const monthlyRevenueCanvas =
+            document.getElementById("monthlyRevenueChart");
+
+
+        if (monthlyRevenueCanvas) {
+
+
+            new Chart(
+                monthlyRevenueCanvas,
+                {
+
+                    type: "line",
+
+
+                    data: {
+
+                        labels: monthlyRevenueMonths,
+
+
+                        datasets: [
+
+                            {
+
+                                label: "Revenue (₹)",
+
+                                data: monthlyRevenueValues,
+
+
+                                borderColor: "#e23744",
+
+
+                                backgroundColor:
+                                    "rgba(226, 55, 68, 0.12)",
+
+
+                                fill: true,
+
+
+                                tension: 0.4,
+
+
+                                pointBackgroundColor:
+                                    "#e23744",
+
+
+                                pointBorderColor:
+                                    "#ffffff",
+
+
+                                pointBorderWidth: 2,
+
+
+                                pointRadius: 5,
+
+
+                                pointHoverRadius: 7
+
+                            }
+
+                        ]
+
+                    },
+
+
+                    options: {
+
+                        responsive: true,
+
+                        maintainAspectRatio: false,
+
+
+                        animation: {
+
+                            duration: 900,
+
+                            easing: "easeOutQuart"
+
+                        },
+
+
+                        plugins: {
+
+                            legend: {
+
+                                display: false
+
+                            },
+
+
+                            tooltip: {
+
+                                backgroundColor:
+                                    isDark
+                                        ? "#222222"
+                                        : "#ffffff",
+
+
+                                titleColor:
+                                    chartTextColor,
+
+
+                                bodyColor:
+                                    chartTextColor,
+
+
+                                borderColor:
+                                    isDark
+                                        ? "#444444"
+                                        : "#eeeeee",
+
+
+                                borderWidth: 1,
+
+
+                                padding: 12,
+
+
+                                callbacks: {
+
+                                    label:
+                                        function(context) {
+
+                                            return " Revenue: ₹ " +
+                                                context.raw;
+
+                                        }
+
+                                }
+
+                            }
+
+                        },
+
+
+                        scales: {
+
+                            y: {
+
+                                beginAtZero: true,
+
+
+                                ticks: {
+
+                                    color:
+                                        chartTextColor,
+
+
+                                    callback:
+                                        function(value) {
+
+                                            return "₹ " + value;
+
+                                        }
+
+                                },
+
+
+                                grid: {
+
+                                    color:
+                                        chartGridColor,
+
+                                    drawBorder: false
+
+                                }
+
+                            },
+
+
+                            x: {
+
+                                ticks: {
+
+                                    color:
+                                        chartTextColor
+
+                                },
+
+
+                                grid: {
+
+                                    display: false
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            );
+
+        }
+
+    </script>
+
+
+
+    <!-- MAIN JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+    <script src="{{ url_for('static', filename='notification.js') }}"></script>
+
+
+</body>
+
+</html>

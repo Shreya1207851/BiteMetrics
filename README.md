@@ -69,6 +69,7 @@ BiteMetrics/
 ├── database.sql
 ├── requirements.txt
 └── .gitignore
+```
 
 How to Run Locally
 1. Clone the repository

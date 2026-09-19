@@ -133,3 +133,10 @@ Customer segmentation
 Predictive analytics
 Automated reports
 Advanced role-based access
+
+## 👩‍💻 Author
+
+**Shreya Kaushal**
+
+GitHub: [Shreya1207851](https://github.com/Shreya1207851)
+

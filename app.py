@@ -15,10 +15,11 @@ app.secret_key = "food-analytics-secret-key"
 # =========================
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password=os.getenv("MYSQL_PASSWORD"),
-    database="food_delivery"
+    host=os.getenv("MYSQLHOST", "localhost"),
+    port=int(os.getenv("MYSQLPORT", "3306")),
+    user=os.getenv("MYSQLUSER", "root"),
+    password=os.getenv("MYSQLPASSWORD") or os.getenv("MYSQL_PASSWORD"),
+    database=os.getenv("MYSQLDATABASE", "food_delivery")
 )
 
 

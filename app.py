@@ -97,7 +97,8 @@ def register():
                 error="Password must be at least 6 characters."
             )
 
-        cursor = db.cursor(dictionary=True)
+        db.ping(reconnect=True, attempts=3, delay=2)
+        cursor = db.cursor(dictionary=True) 
 
         # Check email
 

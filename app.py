@@ -37,6 +37,7 @@ def login():
         email = request.form["email"].strip()
         password = request.form["password"]
 
+        db.ping(reconnect=True, attempts=3, delay=2)
         cursor = db.cursor(dictionary=True)
 
         cursor.execute("""

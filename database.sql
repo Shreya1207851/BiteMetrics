@@ -58,3 +58,12 @@ INSERT INTO orders VALUES
 (108, 3, 3, '2026-09-04', 400.00, 'Delivered'),
 (109, 1, 1, '2026-09-05', 750.00, 'Delivered'),
 (110, 5, 5, '2026-09-05', 650.00, 'Cancelled');
+
+-- Users table
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL DEFAULT 'Analyst'
+);

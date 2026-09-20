@@ -1,8 +1,8 @@
 # 🍔 BiteMetrics — Food Delivery Analytics Dashboard
 
-BiteMetrics is a food delivery analytics dashboard built using Flask, MySQL, SQL, HTML, CSS and JavaScript.
+BiteMetrics is a food delivery analytics dashboard built using **Flask, MySQL, SQL, HTML, CSS and JavaScript**.
 
-The project analyzes food delivery data to provide insights into orders, revenue, customers, restaurants, cities and delivery performance.
+The project analyzes food delivery data to provide insights into **orders, revenue, customers, restaurants, cities and delivery performance**.
 
 ## 📊 Dashboard Features
 
@@ -71,53 +71,48 @@ BiteMetrics/
 └── .gitignore
 ```
 
-How to Run Locally
-1. Clone the repository
-git clone https://github.com/Shreya1207851/BiteMetrics.git
-2. Open the project
-cd BiteMetrics
-3. Create and activate a virtual environment
-
-Windows:
-
-python -m venv .venv
-.venv\Scripts\activate
-4. Install dependencies
-pip install -r requirements.txt
-5. Configure MySQL
-
 🚀 How to Run Locally
 1. Clone the repository
+```
 git clone https://github.com/Shreya1207851/BiteMetrics.git
+```
 2. Open the project
+ ```
 cd BiteMetrics
-3. Create and activate a virtual environment
-
-Windows:
-
+```
+5. Create and activate a virtual environment
+```
 python -m venv .venv
+```
+Activate it on Windows:
+```
 .venv\Scripts\activate
-4. Install dependencies
+```
+4. Install Dependencies
+```
 pip install -r requirements.txt
+```
 5. Configure MySQL
-
-Create the food_delivery database and run the SQL commands from:
-
+```
 database.sql
-
-Create a .env file in the project root:
-
-MYSQL_PASSWORD=your_mysql_password
+```
+Create a ```.env``` file in the project root:
+```
+MYSQLHOST=localhost
+MYSQLPORT=3306
+MYSQLUSER=root
+MYSQLPASSWORD=your_mysql_password
+MYSQLDATABASE=food_delivery
+```
 6. Run the Flask application
+```
 python app.py
-
-Then open the local Flask URL shown in the terminal.
+```
 
 🔐 Security
-
-Database credentials are stored in environment variables using .env.
-
-The .env file is excluded from Git using .gitignore.
+- Database credentials are stored in environment variables.
+- Sensitive configuration is stored in ```.env```.
+- The ```.env``` file is excluded from Git using ```.gitignore```.
 
 🎯 Project Purpose
 
@@ -126,13 +121,13 @@ The main purpose of BiteMetrics is to practice SQL and relational database conce
 It combines SQL-based data analysis with a Flask web dashboard to turn raw food delivery data into useful business insights.
 
 🔮 Future Improvements
-Date-range analytics
-Real-time data
-Restaurant comparison
-Customer segmentation
-Predictive analytics
-Automated reports
-Advanced role-based access
+- Date-range analytics
+- Real-time data
+- Restaurant comparison
+- Customer segmentation
+- Predictive analytics
+- Automated reports
+- Advanced role-based access
 
 ## 👩‍💻 Author
 
